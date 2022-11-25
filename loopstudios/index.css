@@ -1,0 +1,634 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.header {
+  width: 100%;
+  height: 40%;
+  color: white;
+  background-image: url(/images/desktop/image-hero.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 20px 0px 50px;
+}
+.header-div {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.dashboard {
+  width: 95%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto 50px;
+}
+.link:hover::after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+  padding-top: 1px;
+  border-bottom: 1px solid white;
+}
+.logo img {
+  width: 100%;
+  height: 80%;
+}
+.logo {
+  width: 20%;
+}
+.navigation {
+  width: 30vw;
+  height: 30px;
+  font-size: 1.5vw;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-evenly;
+}
+.navigation a {
+  margin: auto 0;
+}
+
+#menuToggle {
+  display: block;
+  position: absolute;
+  top: 22px;
+  right: 55px;
+  width: 5%;
+  -webkit-user-select: none;
+  user-select: none;
+}
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  margin-right: -40px;
+  position: relative;
+  background: white;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.077, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: white;
+}
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  opacity: 1;
+  transform: rotate(-45deg) translate(0px, -2px);
+}
+#menu {
+  position: absolute;
+  width: 100vw;
+  margin-top: -37px;
+  margin-right: -35px;
+  padding: 170px 0 170px;
+  right: 0;
+  top: 0;
+  background: black;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(100%, 0);
+  text-align: left;
+  transition: transform 0.5s cubic-bezier(0.077, 0.2, 0.05, 1);
+}
+#menu a {
+  color: white;
+  text-decoration: none;
+}
+#menu img {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  height: 30px;
+  width: 115px;
+}
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+  margin-left: 30px;
+}
+#menuToggle input:checked ~ ul {
+  transform: none;
+  opacity: 1;
+}
+nav {
+  display: none;
+}
+
+.header-note {
+  border: 1px solid white;
+  max-width: 50%;
+  height: fit-content;
+  font-size: 5vw;
+  font-weight: lighter;
+  justify-self: flex-start;
+  padding: 10px;
+  margin: 0 0 2px 50px;
+  letter-spacing: 2px;
+}
+.main {
+  width: 80%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  margin: 100px auto;
+}
+.vr-image {
+  width: 70%;
+  min-height: 400px;
+  background-image: url(/images/desktop/image-interactive.jpg);
+  background-size: 100% 100%;
+}
+.vr-text {
+  width: 40%;
+  min-height: 210px;
+  max-height: fit-content;
+  background-color: white;
+  padding: 20px;
+  padding-bottom: 0;
+  margin-top: 175px;
+  margin-left: -11vw;
+}
+.vr-text h2 {
+  font-size: 3vw;
+  margin-bottom: 10px;
+  color: black;
+  font-weight: lighter;
+}
+.vr-text h6 {
+  font-size: 16px;
+  color: gray;
+}
+.sub {
+  width: 80%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.sub-heading {
+  width: 95%;
+  padding-right: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.sub-heading h2 {
+  margin: auto 0;
+}
+.sub-display {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.btn {
+  padding: 5px 20px;
+}
+.btn:hover {
+  background-color: black;
+  color: white;
+}
+.mobile-btn {
+  display: none;
+}
+.display1,
+.display2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 25px auto;
+}
+.creations {
+  height: 300px;
+  width: 22%;
+  display: flex;
+  position: relative;
+}
+.creations:hover {
+  background-color: rgba(226, 225, 225, 0.938);
+  background-blend-mode: overlay;
+}
+.creations:hover .text {
+  color: black;
+  opacity: 0.8;
+}
+.text {
+  font-size: 2vw;
+  color: white;
+  width: 70%;
+  margin-left: 2vw;
+  position: absolute;
+  bottom: 30px;
+}
+#deep-earth {
+  background-image: url(/images/desktop/image-deep-earth.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+#night-arcade {
+  background-image: url(/images/desktop/image-night-arcade.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+#soccer-team-vr {
+  background-image: url(/images/desktop/image-soccer-team.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+#the-grid {
+  background-image: url(/images/desktop/image-grid.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+#the-grid .text {
+  width: 50%;
+}
+#from-up-above-vr {
+  background-image: url(/images/desktop/image-from-above.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+#pocket-borealis {
+  background-image: url(/images/desktop/image-pocket-borealis.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+#the-curiosity {
+  background-image: url(/images/desktop/image-curiosity.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+#make-it-fish-eye {
+  background-image: url(/images/desktop/image-fisheye.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.footer {
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: white;
+  width: 100%;
+  height: fit-content;
+  padding: 30px 0;
+}
+.f-div {
+  width: 90%;
+  height: fit-content;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.down-board {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 80px;
+  align-content: flex-start;
+  justify-content: space-between;
+}
+.down-board img {
+  width: 15vw;
+  height: 5vh;
+}
+.f-nav {
+  font-size: 2vw;
+  display: flex;
+  justify-content: space-between;
+}
+.publicity {
+  width: 40%;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  align-items: flex-end;
+  justify-content: space-between;
+  font-size: 2vw;
+}
+.social-media {
+  width: 90%;
+  display: flex;
+  padding: 5px 0;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.social-media img {
+  height: 1v;
+  width: 2v;
+}
+.social-media a:hover::after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 1px;
+  border-bottom: 1px solid white;
+}
+.publicity p {
+  overflow: hidden;
+  width: 100%;
+  font-size: 1.7vw;
+}
+@media screen and (max-width: 375px) {
+  .header {
+    background-image: url(/images/mobile/image-hero.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 60vh;
+  }
+  .navigation {
+    display: none;
+  }
+  #menu {
+    transform: none;
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
+  .logo {
+    margin: auto 0;
+    padding: 0 7px;
+    height: fit-content;
+    width: fit-content;
+  }
+  .logo img {
+    width: 120px;
+    height: 30px;
+    margin: 5px 0 0;
+  }
+  nav {
+    display: block;
+    width: 15%;
+  }
+  .dashboard {
+    height: 40px;
+    overflow: hidden;
+  }
+  #menuToggle {
+    width: 5%;
+    top: 27px;
+    right: 35px;
+    overflow: visible;
+  }
+  .header-note {
+    min-width: 85%;
+    max-width: 85%;
+    padding: 15px;
+    margin: 0 auto;
+    height: 45%;
+    font-size: 10vw;
+    font-weight: lighter;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", "Geneva", "Verdana", "sans-serif";
+    overflow: hidden;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+  .vr-image {
+    order: 1;
+    flex: 1;
+    width: 100%;
+    max-height: 50vh;
+    min-height: 50vh;
+  }
+  .vr-text {
+    order: 2;
+    flex: 2;
+    margin: 0 auto;
+    width: 100%;
+    height: 10vh;
+    padding: 5px;
+  }
+  .vr-text h2 {
+    font-size: 9vw;
+    margin-bottom: 10px;
+    color: black;
+    font-weight: lighter;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .vr-text h6 {
+    font-size: 16px;
+    color: gray;
+  }
+  .sub {
+    width: 90%;
+    margin-bottom: 70px;
+  }
+  .sub-heading {
+    width: 70%;
+    text-align: center;
+  }
+  .sub-heading h2 {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .btn {
+    display: none;
+  }
+  .mobile-btn {
+    display: block;
+    width: 80%;
+    height: 30px;
+    margin: 0 auto;
+    padding: 10px auto;
+    font-size: medium;
+    word-spacing: 5px;
+    letter-spacing: 4px;
+  }
+  .mobile-btn:hover {
+    background-color: black;
+    color: white;
+  }
+  .display1,
+  .display2 {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+  .creations {
+    width: 100%;
+    height: 150px;
+    margin: 0 auto;
+  }
+  .creations:hover {
+    background-color: transparent;
+  }
+  .creations:hover .text {
+    color: white;
+  }
+  .text {
+    font-size: 7vw;
+    color: white;
+    width: 40%;
+    height: fit-content;
+    margin-left: 2vw;
+    position: absolute;
+    bottom: 15px;
+    overflow: hidden;
+  }
+  #deep-earth {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent),
+      url(/images/mobile/image-deep-earth.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  #night-arcade {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent),
+      url(/images/mobile/image-night-arcade.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  #soccer-team-vr {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent),
+      url(/images/mobile/image-soccer-team.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  #the-grid {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent),
+      url(/images/mobile/image-grid.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  #the-grid .text {
+    width: 50%;
+  }
+  #from-up-above-vr {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent),
+      url(/images/mobile/image-from-above.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  #pocket-borealis {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent),
+      url(/images/mobile/image-pocket-borealis.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  #the-curiosity {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent),
+      url(/images/mobile/image-curiosity.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  #make-it-fish-eye {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent),
+      url(/images/mobile/image-fisheye.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: fit-content;
+    padding: 40px 0;
+    font-size: 16px;
+  }
+  .f-div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    height: 70%;
+    justify-content: space-evenly;
+    overflow: hidden;
+  }
+  .down-board {
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    height: fit-content;
+    padding: 10px 0;
+    justify-content: space-around;
+  }
+  .down-board img {
+    height: 30px;
+    width: 170px;
+    margin: auto 0;
+    margin-bottom: 30px;
+  }
+  .f-nav {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    height: 230px;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    font-size: 4vw;
+  }
+  .down-board .nav {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  .publicity {
+    text-align: center;
+    margin: 0 auto;
+    justify-content: space-between;
+    width: 70%;
+    font-size: 16px;
+    color: grey;
+    height: 90px;
+  }
+  .publicity p {
+    width: 100%;
+    font-size: 3.5vw;
+  }
+  .publicity p:hover {
+    color: white;
+    font-weight: bold;
+  }
+  .social-media {
+    margin: 0 auto;
+    height: 30px;
+    margin-bottom: 15px;
+    padding: 5px 0;
+  }
+}
